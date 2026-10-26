@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paste Guard FAQ | Paste Guard</title>
+<meta name="description" content="Answers about what Paste Guard detects, whether it sends data anywhere, which sites it works on, how to check it and what it cannot do.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/faq.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Paste Guard FAQ | Paste Guard">
+<meta property="og:description" content="Answers about what Paste Guard detects, whether it sends data anywhere, which sites it works on, how to check it and what it cannot do.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/faq.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paste Guard FAQ | Paste Guard">
+<meta name="twitter:description" content="Answers about what Paste Guard detects, whether it sends data anywhere, which sites it works on, how to check it and what it cannot do.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="reading">
+<div class="wrap read-grid">
+<nav class="toc" aria-label="On this page"><h2 id="on-this-page">On this page</h2><ol><li><a href="#what-does-it-detect">What does it detect?</a></li><li><a href="#does-it-send-my-data-anywhere">Does it send my data anywhere?</a></li><li><a href="#how-can-i-check-that">How can I check that?</a></li><li><a href="#which-sites-does-it-work-on">Which sites does it work on?</a></li><li><a href="#what-happens-when-it-finds-something">What happens when it finds something?</a></li><li><a href="#what-can-it-not-do">What can it not do?</a></li><li><a href="#how-do-i-report-a-missed-format">How do I report a missed format?</a></li><li><a href="#what-is-restore">What is Restore?</a></li><li><a href="#can-the-website-see-my-restored-values">Can the website see my restored values?</a></li><li><a href="#what-is-the-personal-dictionary">What is the personal dictionary?</a></li><li><a href="#is-it-free">Is it free?</a></li><li><a href="#what-will-pro-be">What will Pro be?</a></li><li><a href="#who-is-behind-it-and-how-do-i-contact-them">Who is behind it, and how do I contact them?</a></li><li><a href="#can-i-try-it-without-installing">Can I try it without installing?</a></li><li><a href="#try">Try the scanner</a></li></ol></nav>
+<article class="read">
+<h1>Paste Guard FAQ</h1>
+<p class="summary">Short, direct answers about what Paste Guard does, what it does not do and how to check it yourself.</p>
+<h2 id="what-does-it-detect">What does it detect?</h2>
+<p>Emails, phone numbers, card numbers (with a checksum), Aadhaar, PAN, US Social Security numbers, UPI IDs, IFSC codes, GSTIN numbers, labelled bank account numbers, IBANs, UK National Insurance numbers, API keys and tokens from many providers, private key blocks, JWTs and connection strings that contain passwords. The <a href="what-it-detects.html">What it detects</a> page is generated from the code, so it always matches the version you install.</p>
+<h2 id="does-it-send-my-data-anywhere">Does it send my data anywhere?</h2>
+<p>No. Detection runs on your device inside the browser. The extension makes no network requests, loads no remote code, has no analytics and needs no account. The only data it stores, on your device, is your settings, a counter of protected pastes, and, if you use Ignore, one-way hashes of values you chose to ignore. It never stores pasted text.</p>
+<h2 id="how-can-i-check-that">How can I check that?</h2>
+<ul><li>Open <code>chrome://extensions</code>, then Details for Paste Guard, to see its permissions: storage, plus the AI sites listed below.</li><li>With Developer mode on, inspect the service worker and the popup and watch the Network tab while you use it. It stays empty.</li><li>Paste a made-up key on a supported site with the Network tab open and see that the paste itself makes no request.</li><li>Look at the installed files: the extension's JavaScript is delivered to your browser, so you can browse it in DevTools (Sources tab) from <code>chrome://extensions</code>.</li></ul>
+<p>The steps are on the <a href="index.html#verify">home page</a>. You can also try the same detectors on the <a href="try.html">scanner page</a> with the Network tab open.</p>
+<h2 id="which-sites-does-it-work-on">Which sites does it work on?</h2>
+<p>ChatGPT, Claude, Gemini, Perplexity, Copilot, Grok, DeepSeek and Mistral (their chat sites). It does nothing on any other website.</p>
+<h2 id="what-happens-when-it-finds-something">What happens when it finds something?</h2>
+<p>A dialog lists what was found, with numbered tags and a short preview. You choose <strong>Paste masked</strong> (each value is replaced with a tag such as <code>[EMAIL_1]</code>), <strong>Paste anyway</strong>, or <strong>Cancel</strong>. Auto-mask mode skips the dialog and pastes the masked version. <strong>Ignore</strong> on a row means that exact value is not flagged again.</p>
+<h2 id="what-can-it-not-do">What can it not do?</h2>
+<ul><li>It matches patterns, so unusual formats can be missed and look-alikes can be flagged.</li><li>It does not understand names, addresses or free-text confidential content.</li><li>It reads text only, not images. It watches pastes, not typing or file uploads, and with Restore on it reads page text on the supported sites to find placeholders in replies.</li><li>It does not take back anything already sent.</li></ul>
+<p>It is a safety net, not a guarantee, and not legal or compliance advice.</p>
+<h2 id="how-do-i-report-a-missed-format">How do I report a missed format?</h2>
+<p>Email <a href="mailto:rkhajuira12345@gmail.com">rkhajuira12345@gmail.com</a> with the name of the provider or document and the shape of the value. Please use made-up samples only and never send a real secret, key or ID. Describe the shape (length, prefix, character set) rather than a real example if you can.</p>
+<h2 id="what-is-restore">What is Restore?</h2>
+<p>The AI only ever receives placeholders such as <code>[EMAIL_1]</code>. When its reply uses a placeholder, Paste Guard shows your original value in that reply on your screen, so the answer reads naturally. It is on by default and can be turned off in the popup. The values are kept in memory only, per site, for up to 4 hours, and are forgotten when you close the browser or press &quot;Forget stored values now&quot;. Your message box always keeps the placeholders, so an original value is not sent by accident. Alt+R (Option+R on a Mac) switches between originals and placeholders.</p>
+<h2 id="can-the-website-see-my-restored-values">Can the website see my restored values?</h2>
+<p>Restored values are ordinary text on the page, so the site's own scripts could in principle read them, as they can read anything else shown on the page. Paste Guard never sends them anywhere. If that matters for what you are working on, turn Restore off in the popup: it then stores and restores nothing.</p>
+<h2 id="what-is-the-personal-dictionary">What is the personal dictionary?</h2>
+<p>Select words in the message box (a client or project name, say) and press Alt+Shift+M (Option+Shift+M on a Mac) or the &quot;Mask this&quot; button. They are replaced by a placeholder and added to a list of up to 10 words kept on your device, so they are masked in every later paste. Matching is whole-word and ignores case. You can remove words in the popup.</p>
+<h2 id="is-it-free">Is it free?</h2>
+<p>Yes. The extension is free, with no account and no tracking.</p>
+<h2 id="what-will-pro-be">What will Pro be?</h2>
+<p>A Pro option with custom rules (your own words and patterns) is planned. It is locked in the current version and nothing in the extension takes payments. No price has been set.</p>
+<h2 id="who-is-behind-it-and-how-do-i-contact-them">Who is behind it, and how do I contact them?</h2>
+<p>Questions, bug reports and missed formats can go to <a href="mailto:rkhajuira12345@gmail.com">rkhajuira12345@gmail.com</a>. Please use made-up samples only.</p>
+<h2 id="can-i-try-it-without-installing">Can I try it without installing?</h2>
+<p>Yes. The <a href="try.html">scanner page</a> runs the same detectors in your browser on a made-up example. It is read only: you cannot type or paste your own text there. Nothing is uploaded.</p>
+
+<aside class="cta-box"><h2 id="try">Try it on your own text</h2><p>The scanner on this site uses the same detectors as the extension. It runs in your browser and nothing is uploaded.</p><p><a class="btn primary" href="try.html">Open the scanner</a></p></aside>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

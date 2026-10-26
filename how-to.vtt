@@ -1,0 +1,89 @@
+WEBVTT
+
+1
+00:00:00.400 --> 00:00:02.400
+How to use Paste Guard, in about 90 seconds.
+
+2
+00:00:04.000 --> 00:00:06.800
+Install Paste Guard from the Chrome Web Store.
+
+3
+00:00:06.800 --> 00:00:09.800
+Open the puzzle menu and pin it, so its settings are one click away.
+
+4
+00:00:11.800 --> 00:00:14.800
+Paste something sensitive into a supported AI chat. Here is made-up text.
+
+5
+00:00:14.800 --> 00:00:18.000
+Paste Guard pauses the paste and lists what it found, before anything is sent.
+
+6
+00:00:18.000 --> 00:00:21.800
+Only the first two characters of each value are shown. Nothing leaves your device.
+
+7
+00:00:23.800 --> 00:00:27.000
+Choose Paste masked, or press Enter. Each value becomes a numbered placeholder.
+
+8
+00:00:27.000 --> 00:00:30.000
+Paste anyway and Cancel are there too. You always have the final say.
+
+9
+00:00:30.000 --> 00:00:31.800
+Now send the message.
+
+10
+00:00:33.800 --> 00:00:38.000
+The assistant only ever receives the placeholders, such as EMAIL_1.
+
+11
+00:00:38.000 --> 00:00:42.000
+When its reply uses a placeholder, your screen shows your own value again.
+
+12
+00:00:42.000 --> 00:00:45.800
+Press Option+R to see what the assistant really saw, and again to switch back.
+
+13
+00:00:47.800 --> 00:00:51.000
+Mask a word of your own: select it in the message box.
+
+14
+00:00:51.000 --> 00:00:54.500
+Press Option+Shift+M, or the Mask this button. It becomes a placeholder.
+
+15
+00:00:54.500 --> 00:00:57.800
+The word is saved to a personal dictionary on your device, for every future paste.
+
+16
+00:00:59.800 --> 00:01:03.000
+Open the Paste Guard icon to change settings, such as turning a detector off.
+
+17
+00:01:03.000 --> 00:01:06.500
+With Email off, the same text no longer flags the email.
+
+18
+00:01:08.000 --> 00:01:12.000
+Press Ignore on a row to let that exact value through. Only a one-way hash is kept.
+
+19
+00:01:12.000 --> 00:01:15.800
+Then paste masked as before.
+
+20
+00:01:17.800 --> 00:01:21.500
+Check it yourself: chrome://extensions shows only the storage permission and the supported sites.
+
+21
+00:01:21.500 --> 00:01:25.000
+Keep the Network tab open while you paste: nothing is sent.
+
+22
+00:01:25.000 --> 00:01:29.500
+Paste Guard is a safety net, not a guarantee. Try the interactive tour on the Paste Guard website.

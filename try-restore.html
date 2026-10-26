@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try Restore and Mask this | Paste Guard</title>
+<meta name="description" content="A hands-on demo of Restore and Mask this: mask a paste, send it, and see your original values come back in the reply on your screen only.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/try-restore.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Try Restore and Mask this | Paste Guard">
+<meta property="og:description" content="A hands-on demo of Restore and Mask this: mask a paste, send it, and see your original values come back in the reply on your screen only.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/try-restore.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Try Restore and Mask this | Paste Guard">
+<meta name="twitter:description" content="A hands-on demo of Restore and Mask this: mask a paste, send it, and see your original values come back in the reply on your screen only.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+<script defer src="detectors.js"></script>
+<script defer src="restore-store.js"></script>
+<script defer src="restore-demo.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html" aria-current="page">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html" aria-current="page">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="tool-page">
+<div class="wrap">
+
+<h1>Try Restore and Mask this</h1>
+<p class="lede">See the whole 1.2.0 flow in your browser: paste something sensitive, mask it, let a pretend AI reply, and watch your original values come back on your screen only.</p>
+<p class="trust"><strong>This page is a local simulation. Nothing is uploaded or stored.</strong> It runs the same detectors and the same placeholder list code as the extension, in this page's memory. Reload and it is all gone.</p>
+<noscript><p class="note-box">This demo needs JavaScript to run in your browser. Nothing is uploaded either way.</p></noscript>
+
+<ol class="rd-steps" aria-label="How it works">
+  <li><span class="rd-n">1</span><div><strong>Mask</strong><p>Paste text. Paste Guard swaps each sensitive value for a placeholder.</p></div></li>
+  <li><span class="rd-n">2</span><div><strong>Send</strong><p>The AI receives only the placeholders. That is all it ever sees.</p></div></li>
+  <li><span class="rd-n">3</span><div><strong>Restore</strong><p>When the reply uses a placeholder, your screen shows your value again.</p></div></li>
+</ol>
+
+<div class="rd" id="rd">
+  <section class="rd-card" aria-labelledby="rd-h1">
+    <h2 id="rd-h1">Your message box</h2>
+    <label for="rdInput" class="vh">Message box</label>
+    <textarea id="rdInput" rows="5" spellcheck="false" autocomplete="off" placeholder="Paste here, or press Paste the example. Select a word to try Mask this."></textarea>
+    <div class="rd-selbar" id="rdSelBar" hidden><button type="button" class="rd-mask" id="rdMaskThis">Mask this<kbd data-keys>Alt+Shift+M</kbd></button><span class="muted">saves the word to your dictionary</span></div>
+    <div class="row">
+      <button type="button" id="rdExample" class="btn primary">Paste the example</button>
+      <button type="button" id="rdSend" class="btn quiet">Send</button>
+      <button type="button" id="rdClearInput" class="btn quiet">Clear box</button>
+    </div>
+
+    <div class="rd-check" id="rdCheck" role="group" aria-label="Paste Guard warning" hidden>
+      <div class="rd-check-head"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.4-3 7.7-7.5 9.8-4.5-2.1-7.5-5.4-7.5-9.8V6z"/><path d="M9 12l2 2 4-4"/></svg><strong>Paste Guard found sensitive data</strong></div>
+      <ul class="rd-found" id="rdFound"></ul>
+      <div class="row">
+        <button type="button" class="btn primary" id="rdMaskPaste">Paste masked</button>
+        <button type="button" class="btn quiet" id="rdAnyway">Paste anyway</button>
+        <button type="button" class="btn quiet" id="rdCancel">Cancel</button>
+      </div>
+    </div>
+    <p class="rd-status" id="rdStatus" role="status" aria-live="polite"></p>
+
+    <div class="rd-dict">
+      <h3>Personal dictionary <span class="muted" id="rdDictCount"></span></h3>
+      <p class="muted" id="rdDictEmpty">Empty. Select a word in the box above and press Mask this.</p>
+      <ul class="rd-chips" id="rdDict"></ul>
+      <p class="rd-warn" id="rdDictFull" hidden>The free limit is 10 words. Pro unlocks unlimited words (Pro is not available yet).</p>
+      <button type="button" class="btn quiet rd-small" id="rdDictClear">Clear all</button>
+    </div>
+  </section>
+
+  <section class="rd-card rd-chatcard" aria-labelledby="rd-h2">
+    <h2 id="rd-h2">The chat</h2>
+    <div class="rd-toolbar">
+      <label class="rd-switch"><input type="checkbox" id="rdRestore" checked><span>Restore original values in replies</span></label>
+    </div>
+    <div class="rd-chat" id="rdChat" aria-live="polite"><p class="rd-empty" id="rdEmpty">Messages appear here. Paste the example, choose Paste masked, press Send, then ask the fake AI to reply.</p></div>
+    <div class="rd-pill" id="rdPill" role="group" aria-label="Restore" hidden>
+      <span class="rd-dot" aria-hidden="true"></span><span id="rdPillText"></span>
+      <button type="button" id="rdToggle">Show placeholders <kbd data-keys>Alt+R</kbd></button>
+      <button type="button" id="rdDismiss" aria-label="Dismiss">×</button>
+    </div>
+    <div class="row">
+      <button type="button" class="btn quiet" id="rdStatic">Static reply</button>
+      <button type="button" class="btn quiet" id="rdStream">Stream a reply</button>
+      <button type="button" class="btn quiet" id="rdLong">Long reply</button>
+      <button type="button" class="btn quiet rd-small" id="rdClearChat">Clear chat</button>
+    </div>
+    <div class="rd-recv">
+      <label for="rdReceived"><strong>What the AI received</strong> <span class="muted">(placeholders only)</span></label>
+      <textarea id="rdReceived" rows="3" readonly spellcheck="false"></textarea>
+    </div>
+    <div class="row rd-mem"><span>Values remembered in memory: <strong id="rdStored">0</strong></span><button type="button" class="btn quiet rd-small" id="rdForget" disabled>Forget stored values now</button></div>
+  </section>
+</div>
+<p class="note">In your own message, the value shows again once it is in the chat, because it is ordinary text on the page. The AI still received only the placeholder. In the real extension the message box always keeps the placeholders. Restored values are underlined here so you can see them; the extension does not underline them.</p>
+
+<h2 id="where">Where your data lives</h2>
+<p>Restore and the dictionary add a little stored data. Here is all of it.</p>
+<table class="rd-table">
+  <thead><tr><th scope="col">What</th><th scope="col">Where</th><th scope="col">How long</th><th scope="col">Sent anywhere?</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Placeholder and original value list (Restore)</th><td>Browser memory only (extension session storage), per site</td><td>Up to 4 hours, 500 entries, cleared when the browser closes or you press Forget</td><td>No</td></tr>
+    <tr><th scope="row">Personal dictionary words</th><td>Your device, extension local storage, plain text</td><td>Until you remove them</td><td>No</td></tr>
+    <tr><th scope="row">Ignored values</th><td>Your device, as salted one-way hashes</td><td>Until you clear them</td><td>No</td></tr>
+    <tr><th scope="row">Settings and the protected-paste count</th><td>Your device</td><td>Until you uninstall</td><td>No</td></tr>
+    <tr><th scope="row">Original sensitive values anywhere else</th><td>Never written to disk, page attributes, URLs or the console</td><td>n/a</td><td>No</td></tr>
+  </tbody>
+</table>
+
+<h2 id="keys">Keyboard shortcuts</h2>
+<table class="rd-table">
+  <thead><tr><th scope="col">Keys</th><th scope="col">What it does</th></tr></thead>
+  <tbody>
+    <tr><th scope="row"><kbd data-keys>Alt+R</kbd></th><td>Switch replies between original values and placeholders</td></tr>
+    <tr><th scope="row"><kbd data-keys>Alt+Shift+M</kbd></th><td>Mask the selected words in the message box and add them to your dictionary</td></tr>
+    <tr><th scope="row"><kbd>Enter</kbd> / <kbd>Esc</kbd></th><td>In the warning: paste masked / cancel</td></tr>
+  </tbody>
+</table>
+<p class="note">On a Mac, Alt is the Option key. In the extension these shortcuts work on the supported AI sites. <a href="features.html">All features</a> · <a href="index.html#verify">Verify it yourself</a></p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

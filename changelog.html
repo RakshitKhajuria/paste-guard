@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog | Paste Guard</title>
+<meta name="description" content="What changed in each version of the Paste Guard extension.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/changelog.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Changelog | Paste Guard">
+<meta property="og:description" content="What changed in each version of the Paste Guard extension.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/changelog.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Changelog | Paste Guard">
+<meta name="twitter:description" content="What changed in each version of the Paste Guard extension.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="reading">
+<div class="wrap">
+<article class="read">
+<h1>Changelog</h1>
+<p class="summary">What changed in each version of the extension. Project notes come first, then each version.</p>
+<h2 id="note-closed-source">Closed source</h2>
+<p><span class="muted">25 April 2026</span> The project's code is now closed source. The extension's behaviour and privacy promises are unchanged.</p>
+<h2 id="v1-2-0">Version 1.2.0</h2>
+<ul><li>Restore mode (on by default): the AI sees placeholders like [EMAIL_1]; in its replies, your browser shows the original values again. This happens only on your device. The values are kept in memory only, per site, for up to 4 hours, and are forgotten when the browser closes or when you press Forget stored values in the popup.</li><li>With Restore on, a value keeps the same placeholder across pastes in a session. The message box always keeps showing placeholders.</li><li>A small pill on the page shows how many values were restored. Press Alt+R, or the pill button, to switch between original values and placeholders.</li><li>Mask this: select words in the message box and press Alt+Shift+M (or the Mask this chip). They are replaced by a placeholder and added to a personal dictionary of up to 10 words, which is stored on your device and masked in every future paste.</li><li>The website has a new interactive page, Try Restore and Mask this, that simulates the whole flow in your browser with nothing uploaded.</li><li>Because of Restore, the extension now reads page text on the supported sites to find placeholders in replies. It still sends nothing anywhere.</li></ul>
+<h2 id="v1-1-0">Version 1.1.0</h2>
+<ul><li>Numbered placeholders: [EMAIL_1], [EMAIL_2], [API_KEY_1]. The same value gets the same number within a paste.</li><li>Ignore button on every dialog row. Only a salted one-way hash is stored, and the list can be cleared from the popup.</li><li>Five more AI chat sites: Perplexity, Copilot, Grok, DeepSeek and Mistral.</li><li>Regional detectors: UPI IDs, IFSC, GSTIN, labelled bank account numbers, IBAN and UK National Insurance numbers.</li><li>Many more API key and token formats, connection strings with passwords, authorization headers and private key blocks.</li><li>A welcome page on first install with a practice box that uses the real detectors.</li><li>Redesigned popup and paste dialog with light and dark themes and reduced-motion support.</li><li>Safer failure handling: an internal error can no longer lose or block a paste. This is covered by automated tests.</li><li>Custom rules (Pro, locked in this version) are validated and time-limited so a bad pattern cannot slow a paste.</li></ul>
+<h2 id="v1-0-0">Version 1.0.0</h2>
+<ul><li>First version: scans pastes on ChatGPT, Claude and Gemini for emails, phone numbers, cards, Aadhaar, PAN, US SSNs and common API keys, and offers to paste a masked version.</li><li>Fully local: no network requests, no analytics, one permission (storage).</li></ul>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

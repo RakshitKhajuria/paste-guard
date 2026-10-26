@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paste Guard: stop pasting secrets into AI chats</title>
+<meta name="description" content="A Chrome extension that checks what you paste into AI chat sites, on your device, and offers to mask emails, API keys, card numbers, Aadhaar, PAN, UPI IDs and more first.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Paste Guard: stop pasting secrets into AI chats">
+<meta property="og:description" content="A Chrome extension that checks what you paste into AI chat sites, on your device, and offers to mask emails, API keys, card numbers, Aadhaar, PAN, UPI IDs and more first.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paste Guard: stop pasting secrets into AI chats">
+<meta name="twitter:description" content="A Chrome extension that checks what you paste into AI chat sites, on your device, and offers to mask emails, API keys, card numbers, Aadhaar, PAN, UPI IDs and more first.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+<script defer src="site.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="landing">
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <h1>Don't paste your secrets into AI&nbsp;chats.</h1>
+      <p class="lede">Paste Guard checks what you paste into ChatGPT, Claude, Gemini and more. If it finds an email, API key, card number, Aadhaar, PAN or UPI ID, it offers to paste a masked version instead. Everything happens on your device.</p>
+      <p class="actions">
+        <span class="btn soon" role="note" data-store="STORE_LINK_HERE">Chrome Web Store: coming soon</span>
+        <a class="btn quiet" href="tour.html">Try the interactive tour</a>
+        <a class="btn quiet" href="try.html">Try the scanner</a>
+      </p>
+      <p class="note">Free. No account. No tracking. Nothing is uploaded: you can check that in your browser.</p>
+    </div>
+    <div class="stage-wrap">
+      <figure class="stage" id="stage">
+    <div class="stage-in" aria-hidden="true" data-impeccable-ignore="nested-cards">
+      <div class="chat">
+        <div class="chat-bar"><span class="dots"></span>Stand-in chat page</div>
+        <div class="chat-input">
+          <p class="in-before">Mail <mark>rahul.sharma@example.com</mark>, key <mark>AKIAIOSFODNN7EXAMPLE</mark></p>
+          <p class="in-after">Mail <span class="tag">[EMAIL_1]</span>, key <span class="tag">[API_KEY_1]</span></p>
+        </div>
+      </div>
+      <div class="dlg">
+        <div class="dlg-head"><span class="dlg-shield"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/></svg></span><div><strong>Sensitive data in your paste</strong><span>4 items were found. Nothing leaves your device.</span></div></div>
+        <ul class="dlg-rows"><li style="--i:0"><span class="dlg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5h16v11H4z"/><path d="M4.5 7.5l7.5 5.8 7.5-5.8"/></svg></span><span class="dlg-name">EMAIL_1<small>ra********</small></span><span class="dlg-x">×1</span><span class="dlg-ign">Ignore</span></li><li style="--i:1"><span class="dlg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 15.5a4 4 0 100-8 4 4 0 000 8z"/><path d="M11 11.5h9.5M17.5 11.5v3M20.5 11.5v2"/></svg></span><span class="dlg-name">API_KEY_1<small>AK********</small></span><span class="dlg-x">×1</span><span class="dlg-ign">Ignore</span></li><li style="--i:2"><span class="dlg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5h18v11H3z"/><path d="M3 10.5h18"/><path d="M6.5 14.5h4"/></svg></span><span class="dlg-name">UPI_1<small>ra********</small></span><span class="dlg-x">×1</span><span class="dlg-ign">Ignore</span></li><li style="--i:3"><span class="dlg-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5h18v11H3z"/><path d="M3 10.5h18"/><path d="M6.5 14.5h4"/></svg></span><span class="dlg-name">CARD_1<small>41********</small></span><span class="dlg-x">×1</span><span class="dlg-ign">Ignore</span></li></ul>
+        <div class="dlg-mask"><small>What masking does</small><span><code>ra********</code> → <span class="tag">[EMAIL_1]</span></span></div>
+        <div class="dlg-actions"><span class="b primary">Paste masked <kbd>Enter</kbd></span><span class="b">Paste anyway</span><span class="b ghost">Cancel <kbd>Esc</kbd></span></div>
+      </div>
+    </div>
+    <figcaption>The extension's dialog, rebuilt with made-up data: you paste <code>rahul.sharma@example.com</code>, it pastes <span class="tag">[EMAIL_1]</span>. The same value always gets the same number inside one paste.</figcaption>
+  </figure>
+      <button type="button" class="replay" id="replay" hidden>Replay</button>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+<section class="sec" aria-labelledby="why">
+  <div class="sec-head"><h2 id="why">What you get</h2></div>
+  <ul class="sec-body feature">
+    <li><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12z"/><circle cx="12" cy="12" r="3"/></svg></span><div><h3>It catches what people forget</h3><p>Emails, phone numbers, cards, Aadhaar, PAN, UPI IDs, IFSC, GSTIN, IBAN, API keys from many providers, private keys and passwords in connection strings. <a href="what-it-detects.html">See the full list</a>.</p></div></li>
+    <li><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><div><h3>You stay in control</h3><p>Paste masked, paste anyway, or cancel. Press Ignore on a value and it is never flagged again.</p></div></li>
+    <li><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 11h12v9H6z"/><path d="M8.5 11V8a3.5 3.5 0 017 0v3"/></svg></span><div><h3>Private by design</h3><p>No network requests, no analytics, no remote code, no account. On the sites listed below it checks what you paste and, with Restore on, reads the page text to show your original values again in replies. Nothing leaves your device.</p></div></li>
+    <li><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 8h14M14 4l4 4-4 4"/><path d="M20 16H6M10 12l-4 4 4 4"/></svg></span><div><h3>Your values come back in replies</h3><p>The AI only sees placeholders like <code>[EMAIL_1]</code>. When it answers using them, your browser shows your real values again, on your device. Your message box keeps the placeholders, and Alt+R (Option+R on a Mac) switches the view. You can turn this off in the popup.</p></div></li>
+    <li><span class="f-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h10M18 7h2M4 17h2M10 17h10"/><circle cx="16" cy="7" r="2"/><circle cx="8" cy="17" r="2"/></svg></span><div><h3>Mask your own words</h3><p>Select a client or project name in the message box and press Alt+Shift+M (Option+Shift+M on a Mac). It is masked now and in every future paste, using a personal dictionary kept on your device (up to 10 words, free).</p></div></li>
+  </ul>
+</section>
+
+<section class="sec new" aria-labelledby="newt">
+  <div class="sec-head"><h2 id="newt">New in 1.2.0: your values come back</h2><p>The AI sees placeholders. You still read your own words.</p></div>
+  <div class="sec-body new-grid">
+    <article class="new-card">
+      <p class="new-flow" aria-hidden="true"><span class="flow-a">jane.doe@example.com</span><span class="flow-arrow">→</span><span class="tag">[EMAIL_1]</span><span class="flow-arrow">→</span><span class="flow-b">jane.doe@example.com</span></p>
+      <h3>Restore in replies</h3>
+      <p>Paste Guard keeps a short-lived list in memory so that when the AI answers using <code>[EMAIL_1]</code>, your screen shows the real value again. Your message box always keeps the placeholder, and the AI never sees the original. Memory only, up to 4 hours, one button to forget it.</p>
+    </article>
+    <article class="new-card">
+      <p class="new-flow" aria-hidden="true"><span class="flow-a">Zorbex</span><kbd>Alt or Option+Shift+M</kbd><span class="tag">[CUSTOM_1]</span></p>
+      <h3>Mask this and your dictionary</h3>
+      <p>Select a client or project name in the message box and press one shortcut. It is masked now and in every future paste, from a personal list of up to 10 words that stays on your device.</p>
+    </article>
+    <p class="new-cta"><a class="btn primary" href="try-restore.html">Try Restore and Mask this</a> <a class="btn quiet" href="features.html">See all features</a></p>
+  </div>
+</section>
+
+<section class="sec catches" aria-labelledby="catches">
+  <div class="sec-head"><h2 id="catches">What it catches</h2><p class="note">With scripting on, hover, focus or press a chip to see a made-up example. It is a safety net, not a guarantee: it matches common patterns and can miss unusual formats.</p></div>
+  <div class="sec-body chip-groups">
+      <div class="chip-group"><h3 id="cg0">Contact</h3>
+        <ul class="chips" aria-labelledby="cg0"><li><button type="button" class="chip" aria-pressed="true" data-name="Email addresses" data-sample="name@example.com" data-ph="[EMAIL_1]">Email addresses</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="Phone numbers (+91 and international)" data-sample="+91 98765 43210" data-ph="[PHONE_1]">Phone numbers (+91 and international)</button></li></ul>
+      </div>
+      <div class="chip-group"><h3 id="cg1">Cards and banking</h3>
+        <ul class="chips" aria-labelledby="cg1"><li><button type="button" class="chip" aria-pressed="false" data-name="Card numbers (checksum-verified)" data-sample="4111 1111 1111 1111" data-ph="[CARD_1]">Card numbers (checksum-verified)</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="UPI IDs" data-sample="name@okaxis" data-ph="[UPI_1]">UPI IDs</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="IFSC codes" data-sample="ABCD0123456" data-ph="[IFSC_1]">IFSC codes</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="Labelled bank account numbers" data-sample="a/c no 123456789012" data-ph="[BANK_ACCT_1]">Labelled bank account numbers</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="IBAN" data-sample="GB82 WEST 1234 5698 7654 32" data-ph="[IBAN_1]">IBAN</button></li></ul>
+      </div>
+      <div class="chip-group"><h3 id="cg2">India IDs</h3>
+        <ul class="chips" aria-labelledby="cg2"><li><button type="button" class="chip" aria-pressed="false" data-name="Aadhaar" data-sample="2345 6789 0123" data-ph="[AADHAAR_1]">Aadhaar</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="PAN" data-sample="ABCDE1234F" data-ph="[PAN_1]">PAN</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="GSTIN" data-sample="22AAAAA0000A1ZC" data-ph="[GSTIN_1]">GSTIN</button></li></ul>
+      </div>
+      <div class="chip-group"><h3 id="cg3">International IDs</h3>
+        <ul class="chips" aria-labelledby="cg3"><li><button type="button" class="chip" aria-pressed="false" data-name="US Social Security numbers" data-sample="123-45-6789" data-ph="[SSN_1]">US Social Security numbers</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="UK National Insurance numbers" data-sample="AB 12 34 56 C" data-ph="[NINO_1]">UK National Insurance numbers</button></li></ul>
+      </div>
+      <div class="chip-group"><h3 id="cg4">Secrets</h3>
+        <ul class="chips" aria-labelledby="cg4"><li><button type="button" class="chip" aria-pressed="false" data-name="API keys and tokens from many providers" data-sample="AKIAIOSFODNN7EXAMPLE" data-ph="[API_KEY_1]">API keys and tokens from many providers</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="JWTs" data-sample="eyJhbGciOi….eyJzdWIiOi….abc123…" data-ph="[API_KEY_1]">JWTs</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="Private keys" data-sample="-----BEGIN PRIVATE KEY----- …" data-ph="[API_KEY_1]">Private keys</button></li><li><button type="button" class="chip" aria-pressed="false" data-name="Connection strings with passwords" data-sample="postgres://user:pa55w0rd@db.example.com/app" data-ph="[API_KEY_1]">Connection strings with passwords</button></li></ul>
+      </div>
+  </div>
+  <div class="preview" id="preview" role="group" aria-label="Example of a masked value" hidden>
+    <div class="pv-body" aria-live="polite" aria-atomic="true"><p class="pv-name">Email addresses</p><p class="pv-row"><code class="pv-sample">name@example.com</code><span class="pv-arrow" aria-hidden="true">→</span><span class="tag">[EMAIL_1]</span></p></div>
+    <p class="pv-hint">Made-up sample. Press a chip to see another.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="tryit">
+  <div class="sec-head"><h2 id="tryit">Try the detectors without installing</h2></div>
+  <div class="sec-body">
+    <p>The <a href="try.html">scanner page</a> runs the same detector code as the extension, in your browser, on a made-up example. It shows what would be found, with a two-character preview of each value. Nothing is uploaded.</p>
+    <p class="note">After you install, a welcome page opens with a practice box that uses the real dialog. The scanner page is the quick way to try the detectors first.</p>
+    <p><a class="btn primary" href="try.html">Open the scanner</a></p>
+  </div>
+</section>
+
+<section class="sec verify" id="verify" aria-labelledby="vt">
+  <div class="sec-head"><h2 id="vt">Verify it yourself</h2><p>You should not have to take our word for it. These checks take about five minutes.</p></div>
+  <ol class="sec-body steps">
+    <li><h3>Permissions</h3><p>Open <code>chrome://extensions</code>, click <em>Details</em> on Paste Guard. It asks only to read and change data on the AI sites listed below. Its only API permission is <code>storage</code>, for your settings.</p></li>
+    <li><h3>No network</h3><p>On <code>chrome://extensions</code> turn on <em>Developer mode</em>, click <em>Inspect views: service worker</em> and open the <em>Network</em> tab. Then right-click the toolbar icon and choose <em>Inspect popup</em>, open its <em>Network</em> tab and change a setting. Both stay empty.</p><figure class="mock" role="group" aria-label="Illustration of an empty Network panel">
+  <div class="mock-tabs" aria-hidden="true"><span>Elements</span><span>Console</span><span class="on">Network</span><span>Sources</span></div>
+  <div class="mock-bar" aria-hidden="true"><span class="rec"></span><span>Filter</span><span class="grow"></span><span>Service worker</span></div>
+  <div class="mock-empty" aria-hidden="true">No requests recorded</div>
+  <figcaption>Illustration, not a screenshot: what an empty Network panel looks like.</figcaption>
+</figure></li>
+    <li><h3>Watch a paste</h3><p>On a supported site, open DevTools, go to <em>Network</em>, and paste a fake key such as <code>AKIA</code> plus 16 capital letters. The warning appears and no request is made by the paste.</p><figure class="mock" role="group" aria-label="Illustration of an empty Network panel">
+  <div class="mock-tabs" aria-hidden="true"><span>Elements</span><span>Console</span><span class="on">Network</span><span>Sources</span></div>
+  <div class="mock-bar" aria-hidden="true"><span class="rec"></span><span>Filter</span><span class="grow"></span><span>Chat page</span></div>
+  <div class="mock-empty" aria-hidden="true">No requests recorded</div>
+  <figcaption>Illustration, not a screenshot: what an empty Network panel looks like.</figcaption>
+</figure></li>
+    <li><h3>Read what is stored</h3><p>In the popup's DevTools console run <code>chrome.storage.local.get(null, console.log)</code>. You will see settings, a counter and, if you used <em>Ignore</em>, one-way hashes. Never pasted text.</p></li>
+    <li><h3>Check Restore</h3><p>With Restore on, mask a fake value, then in the popup's DevTools console run <code>chrome.storage.session.get(null, console.log)</code>: you will see a <code>restore:</code> entry for the site, held in memory. Run <code>chrome.storage.local.get(null, console.log)</code>: the original value is not there. Keep the Network tab open while a reply is restored: no request is made.</p></li>
+    <li><h3>Inspect the installed files</h3><p>The extension's JavaScript is delivered to your browser and can be inspected in the installed package. Open <code>chrome://extensions</code>, click <em>Details</em> on Paste Guard, then open DevTools on its popup or service worker (<em>Inspect popup</em>, or <em>Inspect views</em> with Developer mode on) and browse its files in the <em>Sources</em> tab. This site does not publish the source code.</p></li>
+  </ol>
+</section>
+
+<section class="sec" id="sites" aria-labelledby="st">
+  <div class="sec-head"><h2 id="st">Protected sites</h2></div>
+  <div class="sec-body">
+    <ul class="sites">
+      <li>ChatGPT (chatgpt.com)</li><li>Claude (claude.ai)</li><li>Gemini (gemini.google.com)</li><li>Perplexity (perplexity.ai)</li>
+      <li>Copilot (copilot.microsoft.com)</li><li>Grok (grok.com)</li><li>DeepSeek (chat.deepseek.com)</li><li>Mistral (chat.mistral.ai)</li>
+    </ul>
+    <p class="note">Paste Guard does nothing on any other website.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="watch">
+  <div class="sec-head"><h2 id="watch">Watch the 90-second tutorial</h2></div>
+  <div class="sec-body">
+    <p>Install, paste something sensitive, choose Paste masked, see values restored in replies, mask a word, and change settings. Silent, with captions and chapters.</p>
+    <p class="actions"><a class="btn primary" href="how-to.html">Watch the tutorial</a> <a class="btn quiet" href="tour.html">Try the interactive tour</a></p>
+    <p class="note">The video is a simulation on a stand-in chat page with made-up data. The warning window and the detectors are the real ones.</p>
+  </div>
+</section>
+
+<section class="sec" aria-labelledby="learn">
+  <div class="sec-head"><h2 id="learn">Read more</h2></div>
+  <ul class="sec-body plain">
+    <li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">How to avoid pasting API keys into AI chats</a></li>
+    <li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs in AI chats</a></li>
+    <li><a href="shadow-ai-at-work.html">Shadow AI at work: what employees paste</a></li>
+    <li><a href="faq.html">Frequently asked questions</a></li>
+  </ul>
+</section>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

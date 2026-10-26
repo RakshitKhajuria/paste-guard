@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paste Guard Privacy Policy | Paste Guard</title>
+<meta name="description" content="Paste Guard collects nothing. What the extension reads, what it stores on your device, and what it never does.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/privacy.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Paste Guard Privacy Policy | Paste Guard">
+<meta property="og:description" content="Paste Guard collects nothing. What the extension reads, what it stores on your device, and what it never does.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/privacy.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paste Guard Privacy Policy | Paste Guard">
+<meta name="twitter:description" content="Paste Guard collects nothing. What the extension reads, what it stores on your device, and what it never does.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html" aria-current="page">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html" aria-current="page">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="reading">
+<div class="wrap">
+<article class="read">
+<h1>Paste Guard Privacy Policy</h1>
+<p class="summary">Last updated: October 26, 2026 (version 1.2.0)</p>
+<p>Paste Guard is a browser extension that checks text you paste into AI chat websites and offers to mask sensitive data first.</p>
+<h2 id="what-we-collect">What we collect</h2>
+<p>Nothing. Paste Guard does not collect, record, or receive any personal data, pasted text, browsing history or usage statistics. There is no account, no server and no analytics.</p>
+<h2 id="what-we-send">What we send</h2>
+<p>Nothing. Paste Guard makes no network requests. Pasted text is checked on your device, in memory, and is never written to disk, logged or transmitted.</p>
+<h2 id="what-is-stored-on-your-device">What is stored on your device</h2>
+<p>Only the following, in your browser's local extension storage:</p>
+<ul><li>Your settings: on or off, mode, and which detectors are enabled.</li><li>A number counting how many pastes were protected.</li><li>If you press &quot;Ignore&quot; on a detected item: a salted one-way hash (SHA-256) of that value, so it is not flagged again. The value itself is never stored and cannot be read back from the hash. You can clear this list at any time from the extension's popup.</li><li>Your personal dictionary: if you use &quot;Mask this&quot; to add words, those words are stored as plain text, because they are what the extension has to look for in later pastes. They are stored only on your device, up to 10 words, and you can remove any of them or clear them all in the popup.</li></ul>
+<p>You can remove all of this at any time from the popup or by uninstalling the extension.</p>
+<h2 id="restore-temporary-memory-only">Restore (temporary, memory only)</h2>
+<p>When &quot;Restore original values in replies&quot; is on (it is on by default), the extension keeps a temporary list that pairs each placeholder it used (for example [EMAIL_1]) with the original value, so it can show your original value again in the AI's reply. This list:</p>
+<ul><li>lives only in the browser's memory-only extension storage (chrome.storage.session), per website;</li><li>is never written to disk and is cleared when you close the browser;</li><li>expires after 4 hours, holds at most 500 entries per site, and can be cleared at any time with &quot;Forget stored values now&quot; in the popup;</li><li>is never sent anywhere.</li></ul>
+<p>To find placeholders in replies, the extension reads the text of the page on the supported websites listed below. It only changes text that is not in a message box, and it never puts an original value into the message box, so the AI only receives placeholders. Because restored values are shown as ordinary text on the page, the website's own scripts could in principle read them, just as they can read anything else shown on the page. If you do not want that, turn off &quot;Restore original values in replies&quot; in the popup; the extension then stores and restores nothing.</p>
+<h2 id="where-it-runs">Where it runs</h2>
+<p>Paste Guard only runs on these websites and does nothing on any other site:</p>
+<ul><li>chatgpt.com</li><li>claude.ai</li><li>gemini.google.com</li><li>perplexity.ai and www.perplexity.ai</li><li>copilot.microsoft.com</li><li>grok.com</li><li>chat.deepseek.com</li><li>chat.mistral.ai</li></ul>
+<h2 id="welcome-page">Welcome page</h2>
+<p>When you first install Paste Guard it opens a welcome page that is part of the extension. It uses made-up example data and makes no network requests.</p>
+<h2 id="permissions">Permissions</h2>
+<ul><li>storage: to save the settings, counter and ignore list described above.</li><li>Access to the websites listed above: to see paste events on those pages and show the warning, to read the page text to find placeholders in replies (Restore), and to show the optional &quot;Mask this&quot; button next to text you select in the message box.</li></ul>
+<h2 id="changes">Changes</h2>
+<p>If this policy changes, for example if optional paid features are added later, this page will be updated and the change described before the feature ships.</p>
+<h2 id="contact">Contact</h2>
+<p>Questions: rkhajuira12345@gmail.com</p>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

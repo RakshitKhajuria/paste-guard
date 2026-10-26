@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What Paste Guard detects | Paste Guard</title>
+<meta name="description" content="Every kind of sensitive data Paste Guard looks for, which are on by default, and the placeholder each one becomes. Generated from the detector code.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/what-it-detects.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="What Paste Guard detects | Paste Guard">
+<meta property="og:description" content="Every kind of sensitive data Paste Guard looks for, which are on by default, and the placeholder each one becomes. Generated from the detector code.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/what-it-detects.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What Paste Guard detects | Paste Guard">
+<meta name="twitter:description" content="Every kind of sensitive data Paste Guard looks for, which are on by default, and the placeholder each one becomes. Generated from the detector code.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html" aria-current="page">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html" aria-current="page">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="reading">
+<div class="wrap">
+<article class="read wide-table">
+<h1>What Paste Guard detects</h1>
+<p class="summary">This list is generated from the detector code in the extension, so it matches the version in the repository. Every detector can be switched off in the popup.</p>
+
+<h2 id="secrets-and-keys">Secrets and keys</h2>
+<table>
+  <thead><tr><th scope="col">Detector</th><th scope="col">Placeholder</th><th scope="col">On by default</th><th scope="col">What it matches</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">API keys &amp; secrets</th><td><code>[API_KEY_1]</code></td><td>Yes</td><td>Tokens that start with a known provider prefix (cloud, source hosting, payments, messaging and AI services, among others), secrets next to a label such as secret, token or password, JWTs, HTTP authorization headers, passwords in connection strings and curl commands, and private key blocks.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="identity">Identity</h2>
+<table>
+  <thead><tr><th scope="col">Detector</th><th scope="col">Placeholder</th><th scope="col">On by default</th><th scope="col">What it matches</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Aadhaar numbers</th><td><code>[AADHAAR_1]</code></td><td>Yes</td><td>Twelve digits starting 2 to 9. Grouped as 4-4-4 is flagged; an unbroken number must also pass its check digit.</td></tr>
+    <tr><th scope="row">PAN numbers</th><td><code>[PAN_1]</code></td><td>Yes</td><td>Five letters, four digits, one letter.</td></tr>
+    <tr><th scope="row">US SSNs</th><td><code>[SSN_1]</code></td><td>Yes</td><td>Nine digits in the 3-2-4 shape with separators, excluding ranges that are never issued.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="contact">Contact</h2>
+<table>
+  <thead><tr><th scope="col">Detector</th><th scope="col">Placeholder</th><th scope="col">On by default</th><th scope="col">What it matches</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Email addresses</th><td><code>[EMAIL_1]</code></td><td>Yes</td><td>Standard name@domain addresses.</td></tr>
+    <tr><th scope="row">Phone numbers (+91 / international)</th><td><code>[PHONE_1]</code></td><td>Yes</td><td>Numbers that start with a plus sign and a country code, and Indian mobile numbers written in two groups of five.</td></tr>
+    <tr><th scope="row">Phone numbers (local formats)</th><td><code>[PHONE_1]</code></td><td>No</td><td>Other local phone shapes. Off by default because ordinary numbers can look like phone numbers.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="payments">Payments</h2>
+<table>
+  <thead><tr><th scope="col">Detector</th><th scope="col">Placeholder</th><th scope="col">On by default</th><th scope="col">What it matches</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">Card numbers</th><td><code>[CARD_1]</code></td><td>Yes</td><td>Thirteen to nineteen digits that pass the card check-digit test. Repeated-digit strings are ignored.</td></tr>
+  </tbody>
+</table>
+
+<h2 id="regional">Regional</h2>
+<table>
+  <thead><tr><th scope="col">Detector</th><th scope="col">Placeholder</th><th scope="col">On by default</th><th scope="col">What it matches</th></tr></thead>
+  <tbody>
+    <tr><th scope="row">UPI IDs</th><td><code>[UPI_1]</code></td><td>Yes</td><td>A name, an at sign and the handle of a well-known UPI bank or app.</td></tr>
+    <tr><th scope="row">IFSC codes</th><td><code>[IFSC_1]</code></td><td>Yes</td><td>Four letters, a zero, then six letters or digits.</td></tr>
+    <tr><th scope="row">GSTIN numbers</th><td><code>[GSTIN_1]</code></td><td>Yes</td><td>Fifteen characters in the GST format, with its check character verified.</td></tr>
+    <tr><th scope="row">Bank account numbers (labelled)</th><td><code>[BANK_ACCT_1]</code></td><td>Yes</td><td>Nine to eighteen digits, only when a label such as account number or a/c no comes right before them.</td></tr>
+    <tr><th scope="row">IBANs</th><td><code>[IBAN_1]</code></td><td>Yes</td><td>Country code, two check digits and the account part, verified with the standard check.</td></tr>
+    <tr><th scope="row">UK National Insurance numbers</th><td><code>[NINO_1]</code></td><td>Yes</td><td>The UK National Insurance format, excluding prefixes that are never used.</td></tr>
+  </tbody>
+</table>
+<h2 id="how">How masking works</h2>
+<p>Each found value is replaced with a numbered tag. The same value gets the same number within one paste, so the text still reads sensibly: two mentions of one email both become <code>[EMAIL_1]</code>, a second address becomes <code>[EMAIL_2]</code>. Numbers restart with every paste.</p>
+<h2 id="limits">Limits</h2>
+<p>Detection is pattern based. It can miss formats it does not know and can occasionally flag something harmless; Ignore skips a value you choose. It reads text only, not images. It watches pastes on the supported sites, not typing or uploads, and it reads page text there to restore placeholders in replies. It is a safety net, not a guarantee.</p>
+<aside class="cta-box"><h2 id="try">See it on an example</h2><p>The scanner uses these exact detectors and runs in your browser. Nothing is uploaded.</p><p><a class="btn primary" href="try.html">Open the scanner</a></p></aside>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

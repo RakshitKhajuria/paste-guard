@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Try the scanner | Paste Guard</title>
+<meta name="description" content="Load a made-up example and see what Paste Guard would find. It runs the real detectors in your browser and nothing is uploaded.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/try.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Try the scanner | Paste Guard">
+<meta property="og:description" content="Load a made-up example and see what Paste Guard would find. It runs the real detectors in your browser and nothing is uploaded.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/try.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Try the scanner | Paste Guard">
+<meta name="twitter:description" content="Load a made-up example and see what Paste Guard would find. It runs the real detectors in your browser and nothing is uploaded.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+<script defer src="detectors.js"></script>
+<script defer src="try.js"></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html" aria-current="page">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html" aria-current="page">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="tool-page">
+<div class="wrap">
+
+<h1>Try the scanner</h1>
+<p class="lede">Press the button to load a made-up example and see what Paste Guard would find in it. The extension does the real work, on your own pastes, automatically.</p>
+<p class="trust"><strong>Runs in your browser. Nothing is uploaded.</strong> Open DevTools, then the Network tab, and watch it stay empty while you press the example button. Checks you can run on the extension itself are in <a href="index.html#verify">Verify it yourself</a>.</p>
+<p class="note">Prefer a guided walk-through? Try the <a href="tour.html">interactive tour</a> or watch the <a href="how-to.html">90-second tutorial</a>.</p>
+<noscript><p class="note-box">The scanner needs JavaScript to run in your browser. Nothing is uploaded either way.</p></noscript>
+
+<div class="tool" id="tool">
+  <div class="tool-in">
+    <label for="input">Example text (made-up data, read only)</label>
+    <textarea id="input" rows="9" spellcheck="false" autocomplete="off" readonly placeholder="Press Try the example."></textarea>
+    <div class="row">
+      <button type="button" id="example" class="btn quiet">Try the example</button>
+      <span id="count" class="muted" aria-live="polite"></span>
+    </div>
+    <fieldset class="groups">
+      <legend>What to look for</legend>
+      <label><input type="checkbox" data-group="secrets" checked> Secrets and keys</label>
+      <label><input type="checkbox" data-group="identity" checked> Identity (Aadhaar, PAN, SSN)</label>
+      <label><input type="checkbox" data-group="contact" checked> Contact (email, phone)</label>
+      <label><input type="checkbox" data-group="payments" checked> Payments (cards)</label>
+      <label><input type="checkbox" data-group="regional" checked> Regional (UPI, IFSC, GSTIN, bank, IBAN, NINO)</label>
+      <label><input type="checkbox" data-group="phoneLocal"> Local phone formats (more false alarms)</label>
+    </fieldset>
+  </div>
+
+  <div class="results" id="results" aria-live="polite">
+    <h2 id="found-h">Found</h2>
+    <p id="summary" class="muted">Nothing yet. Press Try the example.</p>
+    <ul id="rows" class="rows"></ul>
+    <h2>Your text with findings marked</h2>
+    <div id="marked" class="marked" tabindex="0" role="region" aria-label="Text with findings marked, showing two characters of each value"></div>
+    <p class="note" id="why-extension">To get a masked version, the extension does it for you on every paste, and puts your values back in the AI's replies.</p>
+  </div>
+</div>
+<p class="note">The example is made-up data. This is a safety net, not a guarantee: it matches common patterns and can miss unusual ones.</p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

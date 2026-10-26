@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to avoid pasting API keys into AI chats | Paste Guard</title>
+<meta name="description" content="What API keys look like, how they end up in AI chats, the habits that prevent it, what to do if one leaks, and where Paste Guard helps and cannot.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/how-to-avoid-pasting-api-keys-into-ai-chats.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="How to avoid pasting API keys into AI chats | Paste Guard">
+<meta property="og:description" content="What API keys look like, how they end up in AI chats, the habits that prevent it, what to do if one leaks, and where Paste Guard helps and cannot.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/how-to-avoid-pasting-api-keys-into-ai-chats.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to avoid pasting API keys into AI chats | Paste Guard">
+<meta name="twitter:description" content="What API keys look like, how they end up in AI chats, the habits that prevent it, what to do if one leaks, and where Paste Guard helps and cannot.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="reading">
+<div class="wrap read-grid">
+<nav class="toc" aria-label="On this page"><h2 id="on-this-page">On this page</h2><ol><li><a href="#what-an-api-key-looks-like">What an API key looks like</a></li><li><a href="#why-keys-end-up-in-ai-chats">Why keys end up in AI chats</a></li><li><a href="#habits-that-prevent-most-leaks">Habits that prevent most leaks</a></li><li><a href="#if-a-key-was-pasted">If a key was pasted</a></li><li><a href="#where-paste-guard-helps">Where Paste Guard helps</a></li><li><a href="#where-it-cannot-help">Where it cannot help</a></li><li><a href="#try">Try the scanner</a></li></ol></nav>
+<article class="read">
+<h1>How to avoid pasting API keys into AI chats</h1>
+<p class="summary">An API key is a password for software. If one ends up in a chat window, treat it as exposed and replace it. This guide explains what keys look like, how they end up in pastes, the habits that prevent it, and what to do when one slips through.</p>
+<h2 id="what-an-api-key-looks-like">What an API key looks like</h2>
+<p>Most providers issue keys as one long string of letters and digits. Many start with a short, recognisable prefix so the provider (and secret scanners) can tell what the string is. A cloud access key might start with four capital letters and continue with sixteen more characters. A source-hosting token might start with a short word and an underscore. A payment key often says whether it is a test key or a live key right in the prefix.</p>
+<p>Some secrets have no prefix at all. A cloud secret access key, a database password or a signing secret is often just a random-looking string. These usually appear next to a label such as <code>secret</code>, <code>token</code>, <code>password</code> or <code>api_key</code>, followed by a colon or an equals sign. That label is often the only clue.</p>
+<p>Two other things carry secrets and are easy to miss: connection strings that contain a password (<code>user:password@host</code>), and private key blocks that begin with a line of dashes and the words <code>PRIVATE KEY</code>.</p>
+<h2 id="why-keys-end-up-in-ai-chats">Why keys end up in AI chats</h2>
+<p>Nobody pastes a key on purpose. It happens because the useful thing to paste is something else, and the key rides along:</p>
+<ul><li><strong>Error logs and stack traces.</strong> A request dump or a failing command often prints headers, including an authorization header.</li><li><strong>Config files.</strong> Asking &quot;why does this fail?&quot; with a whole <code>.env</code>, YAML or JSON file pasted in.</li><li><strong>Shell history and curl commands.</strong> A command copied from a terminal with a token in it.</li><li><strong>Code with a hard-coded key.</strong> Fine on a laptop, risky the moment it is copied elsewhere.</li><li><strong>Screenshots of terminals or dashboards</strong>, which no text tool can read for you.</li></ul>
+<h2 id="habits-that-prevent-most-leaks">Habits that prevent most leaks</h2>
+<ol><li><strong>Keep secrets out of code.</strong> Load them from environment variables or a secrets manager, so a pasted file does not contain them.</li><li><strong>Trim before you paste.</strong> Paste the failing function and the error line, not the whole file or the whole log.</li><li><strong>Replace values by hand when in doubt.</strong> Swap the real value for <code>YOUR_API_KEY</code> yourself. The model rarely needs the real one.</li><li><strong>Use narrow keys.</strong> A key limited to one project, one action and a short life does less damage when it leaks.</li><li><strong>Use separate test keys</strong> for experiments, so a test key in a chat is a small problem.</li><li><strong>Do not rely on memory.</strong> Add a check at the point of pasting, which is where mistakes happen.</li></ol>
+<h2 id="if-a-key-was-pasted">If a key was pasted</h2>
+<p>Assume it is compromised, even if the chat is private. The steps are the same for nearly every provider:</p>
+<ol><li><strong>Revoke or rotate the key</strong> in the provider's dashboard. Rotation matters more than deleting the chat.</li><li><strong>Create a replacement</strong> and update the places that use it.</li><li><strong>Check the usage log</strong> for the key, if the provider offers one, for calls you do not recognise.</li><li><strong>Check where else it was copied</strong>: commits, tickets, shared documents, other chats.</li><li><strong>If the key was in a commit</strong>, rotating it is still required. Rewriting history does not undo copies.</li></ol>
+<p>Do this first and delete the conversation second.</p>
+<h2 id="where-paste-guard-helps">Where Paste Guard helps</h2>
+<p>Paste Guard is a Chrome extension that looks at text at the moment you paste it into a supported AI chat site. If it finds something that looks like a key, token, private key block or password in a connection string, it pauses the paste and offers three choices: paste a masked version (the key becomes a tag such as <code>[API_KEY_1]</code>), paste anyway, or cancel. The check happens on your device and nothing is sent anywhere, which you can verify in the browser's Network tab.</p>
+<p>It recognises the prefixes used by many common providers, labelled secrets such as <code>secret: ...</code>, private key blocks and connection strings with passwords. You can see the full list on the <a href="what-it-detects.html">What it detects</a> page.</p>
+<h2 id="where-it-cannot-help">Where it cannot help</h2>
+<ul><li><strong>Unlabelled random strings.</strong> A secret with no known prefix and no label looks like any other random text, so it can be missed.</li><li><strong>New or unusual formats.</strong> It matches patterns it knows. A provider's brand-new format may not be known yet.</li><li><strong>Screenshots and images.</strong> It reads text, not pictures.</li><li><strong>Typing, drag and drop, and unsupported sites.</strong> It watches pastes on the listed sites only.</li><li><strong>Keys already pasted.</strong> It cannot take anything back.</li></ul>
+<aside class="note-box">Paste Guard is a safety net, not a guarantee. It does not replace good habits, and it is not legal or compliance advice. If your organisation has rules about AI tools, follow those first.</aside>
+<p>If it misses a format, you can email <a href="mailto:rkhajuira12345@gmail.com">rkhajuira12345@gmail.com</a> using made-up samples only. Never send a real secret.</p>
+
+<aside class="cta-box"><h2 id="try">Try it on your own text</h2><p>The scanner on this site uses the same detectors as the extension. It runs in your browser and nothing is uploaded.</p><p><a class="btn primary" href="try.html">Open the scanner</a></p></aside>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>

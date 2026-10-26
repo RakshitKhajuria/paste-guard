@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://RakshitKhajuria.github.io/paste-guard/sitemap.xml

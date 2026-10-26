@@ -1,0 +1,7 @@
+00:00:00 Install
+00:00:10 Paste something sensitive
+00:00:22 Choose Paste masked
+00:00:32 Restore in replies
+00:00:46 Mask a word
+00:00:58 Settings and Ignore
+00:01:16 Verify it yourself

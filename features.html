@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Paste Guard features | Paste Guard</title>
+<meta name="description" content="Every Paste Guard feature in one place: detection, masking, Restore in replies, Mask this and the personal dictionary, the popup and privacy.">
+<link rel="canonical" href="https://RakshitKhajuria.github.io/paste-guard/features.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Paste Guard">
+<meta property="og:title" content="Paste Guard features | Paste Guard">
+<meta property="og:description" content="Every Paste Guard feature in one place: detection, masking, Restore in replies, Mask this and the personal dictionary, the popup and privacy.">
+<meta property="og:url" content="https://RakshitKhajuria.github.io/paste-guard/features.html">
+<meta property="og:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta property="og:image:alt" content="Paste Guard: an email and an API key in a paste are replaced with numbered placeholders before they reach an AI chat.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Paste Guard features | Paste Guard">
+<meta name="twitter:description" content="Every Paste Guard feature in one place: detection, masking, Restore in replies, Mask this and the personal dictionary, the popup and privacy.">
+<meta name="twitter:image" content="https://RakshitKhajuria.github.io/paste-guard/social-preview.png">
+<meta name="theme-color" content="#f1f3ff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0a0d1c" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="progress" aria-hidden="true"></div>
+<header class="site-head">
+  <div class="wrap">
+    <nav aria-label="Main">
+      <a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a>
+      <ul class="links"><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      <details class="menu">
+        <summary>Menu</summary>
+        <ul><li><a href="tour.html">Interactive tour</a></li><li><a href="try.html">Try it</a></li><li><a href="try-restore.html">Try Restore</a></li><li><a href="features.html">Features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="faq.html">FAQ</a></li><li><a href="index.html#verify">Verify it</a></li><li><a href="privacy.html">Privacy</a></li></ul>
+      </details>
+    </nav>
+  </div>
+</header>
+<main id="main" class="reading">
+<div class="wrap read-grid">
+<nav class="toc" aria-label="On this page"><h2 id="on-this-page">On this page</h2><ol><li><a href="#protecting-a-paste">Protecting a paste</a></li><li><a href="#what-it-detects">What it detects</a></li><li><a href="#restore-original-values-in-replies">Restore original values in replies</a></li><li><a href="#mask-this-and-the-personal-dictionary">Mask this and the personal dictionary</a></li><li><a href="#the-popup">The popup</a></li><li><a href="#welcome-page">Welcome page</a></li><li><a href="#privacy-and-safety">Privacy and safety</a></li><li><a href="#supported-sites">Supported sites</a></li><li><a href="#not-available-yet">Not available yet</a></li><li><a href="#try">Try the scanner</a></li></ol></nav>
+<article class="read">
+<h1>Paste Guard features</h1>
+<p class="summary">Every feature in version 1.2.0, in one place. Everything runs on your device. Paste Guard makes no network requests and has no account or analytics.</p>
+<h2 id="protecting-a-paste">Protecting a paste</h2>
+<ul><li><strong>Checks every paste</strong> on the supported AI chat sites. Clean text is pasted exactly as normal.</li><li><strong>Warning dialog</strong> listing each unique item found, with a short preview (only the first two characters) and a before and after example.</li><li><strong>Three choices:</strong> Paste masked (default, Enter), Paste anyway, Cancel (Esc). It never blocks you from the final choice.</li><li><strong>Numbered placeholders</strong> such as <code>[EMAIL_1]</code>, <code>[CARD_1]</code>, <code>[API_KEY_1]</code>. The same value gets the same number, so the AI can still follow your text.</li><li><strong>Ignore this item</strong> on any row. Only a salted one-way hash is kept, never the value.</li><li><strong>Modes:</strong> Ask, Auto-mask or Off, plus a master on and off switch.</li><li><strong>Safe by design:</strong> if anything fails internally, your original text is pasted and later pastes keep working. Large pastes (1 MB) are scanned in about a tenth of a second.</li><li><strong>Works in</strong> textareas, inputs and rich text editors, keeping line breaks.</li></ul>
+<h2 id="what-it-detects">What it detects</h2>
+<ul><li>Email addresses, phone numbers (anything starting with <code>+</code>, Indian mobiles), card numbers (Luhn checked).</li><li>Indian IDs: Aadhaar (Verhoeff checked) and PAN.</li><li>Regional and banking IDs: UPI IDs, IFSC codes, GSTIN (checksum verified), labelled bank account numbers, IBANs (mod-97 verified), UK National Insurance numbers.</li><li>US Social Security numbers.</li><li>API keys and secrets from about 75 providers, JSON Web Tokens, private keys, passwords in connection strings and labelled secrets.</li><li>Your own words, from the personal dictionary.</li><li>Every detector has its own switch in the popup. See <a href="what-it-detects.html">What it detects</a> for the full list and defaults.</li></ul>
+<h2 id="restore-original-values-in-replies">Restore original values in replies</h2>
+<ul><li>The AI only ever receives placeholders. When its reply uses them, your browser shows your original values again, on your device only.</li><li>On by default, with a switch in the popup.</li><li>The same value keeps the same placeholder across pastes in a session, per site.</li><li>The list that pairs placeholders with values is kept in memory only. It is never written to disk, expires after 4 hours, holds at most 500 entries per site, and is cleared when you close the browser.</li><li><strong>Forget stored values now</strong> in the popup, and a count of restorable values.</li><li>Your message box always keeps the placeholders, so an original value cannot be sent by accident.</li><li>A small pill shows &quot;Restored N values&quot;. Press <strong>Alt+R (Option+R on a Mac)</strong> or the pill button to switch between original values and placeholders. You can dismiss the pill.</li><li>Handles replies that stream in small pieces, placeholders split across elements, and placeholders inside bold text or code.</li><li>To find placeholders, the extension reads the page text on the supported sites. It sends nothing anywhere.</li><li>You can try the whole flow in your browser, with nothing installed, on the <a href="try-restore.html">Try Restore and Mask this</a> page.</li></ul>
+<h2 id="mask-this-and-the-personal-dictionary">Mask this and the personal dictionary</h2>
+<ul><li>Select words in the message box and press <strong>Alt+Shift+M (Option+Shift+M on a Mac)</strong>, or use the <strong>Mask this</strong> chip that appears next to the selection.</li><li>The words become a <code>[CUSTOM_1]</code> style placeholder, are restored in replies, and are added to your personal dictionary.</li><li>Matching in future pastes is whole word and ignores case, so &quot;Zorbex&quot; is found but &quot;Zorbexville&quot; is not.</li><li>Free limit of 10 words, then the extension says &quot;Pro unlocks unlimited words&quot;. Pro is not available yet.</li><li>The words are stored on your device only. List, remove or clear them in the popup.</li></ul>
+<h2 id="the-popup">The popup</h2>
+<ul><li>Protection switch, mode selector and a counter of pastes protected.</li><li>A switch per detector, grouped as Secrets and keys, Identity, Contact, Payments and Regional.</li><li>Restore switch, restorable value count and the Forget button.</li><li>Personal dictionary list with remove and clear all.</li><li>Ignored items count with a clear button.</li><li>A locked Pro section for custom regular expressions (not available yet).</li><li>Light and dark mode, keyboard friendly, reduced motion respected.</li><li>Version number in the footer, so you can tell which build you are running.</li></ul>
+<h2 id="welcome-page">Welcome page</h2>
+<p>On first install a page opens with a practice box that runs the real detectors and the real dialog on made-up data, then shows a made-up reply with values restored so you can see the idea. It makes no network requests. The same walk-through is on the website as the <a href="tour.html">interactive tour</a>, and there is a <a href="how-to.html">short video tutorial</a>.</p>
+<h2 id="privacy-and-safety">Privacy and safety</h2>
+<ul><li>No network requests, no analytics, no remote code, no account.</li><li>Permissions: <code>storage</code> plus the eight supported sites. Nothing on any other site.</li><li>Stored on disk: your settings, the paste counter, ignore hashes and dictionary words. Original sensitive values are never written to disk, page attributes, URLs or the console.</li><li>See <a href="privacy.html">Privacy</a> and how to <a href="index.html#verify">verify it yourself</a>.</li></ul>
+<h2 id="supported-sites">Supported sites</h2>
+<p>ChatGPT (chatgpt.com), Claude (claude.ai), Gemini (gemini.google.com), Perplexity (perplexity.ai), Copilot (copilot.microsoft.com), Grok (grok.com), DeepSeek (chat.deepseek.com) and Mistral (chat.mistral.ai).</p>
+<h2 id="not-available-yet">Not available yet</h2>
+<ul><li>Pro: unlimited dictionary words and custom regular expressions.</li><li>Detection is pattern based and can miss unusual formats. It does not read images or files, and it does not take back anything already sent.</li></ul>
+<p><a href="try.html">Try the scanner</a></p>
+
+<aside class="cta-box"><h2 id="try">Try it on your own text</h2><p>The scanner on this site uses the same detectors as the extension. It runs in your browser and nothing is uploaded.</p><p><a class="btn primary" href="try.html">Open the scanner</a></p></aside>
+</article>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand"><a class="brand" href="index.html"><svg class="logo" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7.5 3v5.2c0 4.6-3.1 8.3-7.5 9.8-4.4-1.5-7.5-5.2-7.5-9.8V6L12 3z"/><path d="M8.6 12.2l2.5 2.5 4.4-4.9"/></svg><span>Paste Guard</span></a><p>A free Chrome extension that checks what you paste into AI chats, on your device.</p></div>
+      <nav aria-label="Guides"><h2>Guides</h2><ul><li><a href="how-to-avoid-pasting-api-keys-into-ai-chats.html">API keys in AI chats</a></li><li><a href="aadhaar-pan-upi-in-ai-chats.html">Aadhaar, PAN and UPI IDs</a></li><li><a href="shadow-ai-at-work.html">Shadow AI at work</a></li><li><a href="faq.html">FAQ</a></li></ul></nav>
+      <nav aria-label="Product"><h2>Product</h2><ul><li><a href="try.html">Try the scanner</a></li><li><a href="try-restore.html">Try Restore and Mask this</a></li><li><a href="features.html">All features</a></li><li><a href="what-it-detects.html">What it detects</a></li><li><a href="index.html#verify">Verify it yourself</a></li><li><a href="changelog.html">Changelog</a></li></ul></nav>
+      <nav aria-label="Project"><h2>Project</h2><ul><li><a href="privacy.html">Privacy policy</a></li><li><a href="mailto:rkhajuira12345@gmail.com">Report a bug or missed format</a></li></ul></nav>
+    </div>
+    <p class="fine">Paste Guard is not affiliated with OpenAI, Anthropic, Google, Perplexity, Microsoft, xAI, DeepSeek or Mistral.</p>
+  </div>
+</footer>
+</body>
+</html>
